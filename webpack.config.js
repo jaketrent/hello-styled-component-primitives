@@ -1,7 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/index.js',
   plugins: [
     new HtmlWebpackPlugin({
       inject: false,
@@ -13,6 +14,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        include: path.resolve('./src'),
         loaders: [
           {
             loader: 'babel-loader',
